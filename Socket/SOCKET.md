@@ -72,3 +72,9 @@ when a `connect` is established `accept` will return a new socket
 [非同步程式設計(async)和 non-blocking IO](https://medium.com/@fcamel/%E9%9D%9E%E5%90%8C%E6%AD%A5%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88%E5%92%8C-non-blocking-io-a43881081aac)
 
 [淺談 I/O Model](https://medium.com/@clu1022/%E6%B7%BA%E8%AB%87i-o-model-32da09c619e6)
+
+# waiting multiple client
+
+## io multiplexing
+
+select, poll

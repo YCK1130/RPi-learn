@@ -7,8 +7,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h> //import inet_addr()
 
-int main(int argc , char *argv[])
-{
+int main(int argc , char *argv[]){
 
     //socket的建立
     int sockfd = 0;
