@@ -39,14 +39,13 @@ int main(int argc , char *argv[]){
     //Send a message to server
     char message[] = {"Hi there"};
     char msg[]={"Hi it's me again"};
-    char receiveMessage[100] = {};
+    char receiveMessage[1024] = {};
     send(sockfd,message,sizeof(message),0);
     recv(sockfd,receiveMessage,sizeof(receiveMessage),0);
     printf("%s",receiveMessage);
 
     char userCommand[256];
     while(1){
-        char strNum[10];
         int num;
         printf("Please enter a command: ");
         scanf("%s",userCommand);
@@ -55,6 +54,8 @@ int main(int argc , char *argv[]){
         // memset(receiveMessage, 0, sizeof(receiveMessage));
         recv(sockfd,receiveMessage,sizeof(receiveMessage),0);
         printf("%s\n",receiveMessage);
+
+        send(sockfd,receiveMessage,sizeof(receiveMessage),0);
 
         recv(sockfd,receiveMessage,sizeof(receiveMessage),0);
         printf("%s\n",receiveMessage);

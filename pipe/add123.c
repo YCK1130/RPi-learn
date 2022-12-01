@@ -3,6 +3,6 @@
 #include<unistd.h>
 int main(){
     int six = 1+2+3;
-    printf("%d",six);
+    printf("%d\n",six);
     return 0;
 }

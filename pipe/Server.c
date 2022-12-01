@@ -72,9 +72,9 @@ int main(int argc , char *argv[]){
             int status;
             waitpid(pid_c,&status,0);
             if(status==0)
-                write(1,"Child return successfullly",sizeof "Child return successfullly");
+                write(1,"Child return successfullly\n",sizeof "Child return successfullly\n");
             else
-                write(1,"something went wrong",sizeof "something went wrong");
+                write(1,"something went wrong\n",sizeof "something went wrong\n");
             
         }
         else{
@@ -82,9 +82,11 @@ int main(int argc , char *argv[]){
             write(1,msg,sizeof msg);
             send(forClientSockfd,msg,sizeof(msg),0);
         }
-        printf("disconnect1\n");
-        printf("disconnect2\n");
+        // write(1,"\ndisconnect\n",sizeof "\ndisconnect\n");
+        recv(forClientSockfd,inputBuffer,sizeof(inputBuffer),0);
 
+        write(1,inputBuffer,sizeof inputBuffer);
+        
         send(forClientSockfd,"disconnect",sizeof("disconnect"),0);
         recv(forClientSockfd,inputBuffer,sizeof(inputBuffer),0);
         while(strcmp(inputBuffer,"k")!=0){
